@@ -85,11 +85,6 @@ const LoginPage = () => {
           New to Saint Beauty shop? {' '}
           <Link to="/register" className="text-[#7B9E87] font-bold border-b border-[#7B9E87] pb-1 hover:text-[#2D3A2E] hover:border-[#2D3A2E] transition-all">Create account</Link>
         </div>
-
-        <div className="mt-10 p-6 bg-white/40 border border-[#D8E2D6] rounded-3xl text-[10px] text-[#5A6B5C] flex justify-between italic">
-           <div><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Customer</p><p>customer@saintbeauty.com / pass123</p></div>
-           <div className="text-right"><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Admin</p><p>admin@saintbeauty.com / admin123</p></div>
-        </div>
       </div>
     </div>
   );
