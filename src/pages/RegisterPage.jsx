@@ -74,11 +74,15 @@ const RegisterPage = () => {
         marketing_emails: formData.marketingEmails
       };
 
-      await register(backendData.name, backendData.email, backendData.password, backendData);
-      toast.success('Registration successful! Please log in.');
-      navigate('/login');
+      const user = await register(backendData.name, backendData.email, backendData.password, backendData);
+
+      if (user) {
+        toast.success(`Welcome to Saint Beauty Shop, ${formData.firstName}! ✨`);
+        navigate('/dashboard'); // Auto-login and go to dashboard
+      }
     } catch (err) {
-      // Handled in context
+      const errorMsg = err.response?.data?.detail || 'Registration failed. Please try again.';
+      toast.error(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
