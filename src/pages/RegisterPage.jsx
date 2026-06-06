@@ -58,10 +58,12 @@ const RegisterPage = () => {
     try {
       // Map frontend fields to backend schema
       const backendData = {
+        name: formData.firstName + " " + formData.lastName,
         first_name: formData.firstName,
         last_name: formData.lastName,
         email: formData.email,
         password: formData.password,
+        address: formData.address1 + (formData.address2 ? ", " + formData.address2 : ""),
         address_1: formData.address1,
         address_2: formData.address2,
         city: formData.city,
@@ -72,7 +74,7 @@ const RegisterPage = () => {
         marketing_emails: formData.marketingEmails
       };
 
-      await register(backendData.first_name + " " + backendData.last_name, backendData.email, backendData.password, backendData);
+      await register(backendData.name, backendData.email, backendData.password, backendData);
       toast.success('Registration successful! Please log in.');
       navigate('/login');
     } catch (err) {

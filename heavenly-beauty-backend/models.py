@@ -15,6 +15,7 @@ class User(Base):
     role = Column(String, default="customer") # 'customer' or 'admin'
 
     # Address details
+    address = Column(String, nullable=True)
     address_1 = Column(String, nullable=True)
     address_2 = Column(String, nullable=True)
     city = Column(String, nullable=True)
