@@ -1,0 +1,6 @@
+heavenly-beauty-backend/
+python-backend/
+venv/
+.venv/
+*.db
+*.py
