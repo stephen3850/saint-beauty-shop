@@ -1,17 +1,10 @@
 fastapi
-uvicorn
 sqlalchemy
-aiosqlite
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
 bcrypt
-python-socketio
 python-dotenv
-cloudinary
 pydantic
-pydantic-settings
 email-validator
 requests
-stripe
-gunicorn
