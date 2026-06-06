@@ -87,8 +87,8 @@ const LoginPage = () => {
         </div>
 
         <div className="mt-10 p-6 bg-white/40 border border-[#D8E2D6] rounded-3xl text-[10px] text-[#5A6B5C] flex justify-between italic">
-           <div><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Customer</p><p>customer@heavenly.com / pass123</p></div>
-           <div className="text-right"><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Admin</p><p>admin@heavenly.com / admin123</p></div>
+           <div><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Customer</p><p>customer@saintbeauty.com / pass123</p></div>
+           <div className="text-right"><p className="font-bold uppercase tracking-widest text-[#2D3A2E]">Admin</p><p>admin@saintbeauty.com / admin123</p></div>
         </div>
       </div>
     </div>

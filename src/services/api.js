@@ -54,7 +54,7 @@ api.interceptors.response.use(
 );
 
 // 4. TEST CONNECTION FUNCTION (Call from console)
-window.testHeavenlyAPI = async () => {
+window.testSaintAPI = async () => {
   console.log('🧪 Testing connection to backend...');
   try {
     const res = await axios.get(`${API_BASE_URL}/health`);

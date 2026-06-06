@@ -4,24 +4,24 @@ import json
 
 def seed_db(db: Session):
     # Seed Users
-    admin = db.query(models.User).filter(models.User.email == "admin@heavenly.com").first()
+    admin = db.query(models.User).filter(models.User.email == "admin@saintbeauty.com").first()
     if not admin:
         db.add(models.User(
             first_name="Stephen",
             last_name="Admin",
             name="Stephen Admin",
-            email="admin@heavenly.com",
+            email="admin@saintbeauty.com",
             password=auth.get_password_hash("admin123"),
             role="admin"
         ))
 
-    customer = db.query(models.User).filter(models.User.email == "customer@heavenly.com").first()
+    customer = db.query(models.User).filter(models.User.email == "customer@saintbeauty.com").first()
     if not customer:
         db.add(models.User(
             first_name="Test",
             last_name="Customer",
             name="Test Customer",
-            email="customer@heavenly.com",
+            email="customer@saintbeauty.com",
             password=auth.get_password_hash("pass123"),
             role="customer"
         ))
