@@ -45,7 +45,13 @@ const DashboardOverview = () => {
           <h1 className="text-4xl md:text-5xl font-black tracking-tighter italic">
             Bonjour, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7B9E87] via-[#C4A46C] to-[#E5705E]">{user?.name?.split(' ')[0] || 'Emma'}</span>!
           </h1>
-          <p className="text-white/40 text-lg font-light italic">Your beauty sanctuary is ready for you today.</p>
+          <div className="flex flex-col gap-1">
+            <p className="text-white/40 text-lg font-light italic">Your beauty sanctuary is ready for you today.</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C4A46C]/60 flex items-center gap-2">
+              <span className="w-8 h-px bg-white/10" />
+              {new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
+            </p>
+          </div>
         </div>
         <div className="flex gap-2">
             <Link to="/shop" className="btn-premium px-8 py-3 text-[10px] font-black uppercase tracking-widest bg-white/5 border border-white/10 hover:bg-[#7B9E87] hover:text-white transition-all">Shop Rituals</Link>

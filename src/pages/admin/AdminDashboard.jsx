@@ -133,9 +133,15 @@ const AdminDashboard = () => {
       </header>
 
       {/* Welcome Section */}
-      <section className="mb-6">
-        <h1 className="text-2xl font-bold mb-0.5">Welcome back, Stephen! 👋</h1>
-        <p className="text-slate-400 text-xs">Here's what's happening with your store today.</p>
+      <section className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <h1 className="text-2xl font-bold mb-0.5">Welcome back, Stephen! 👋</h1>
+          <p className="text-slate-400 text-xs">Here's what's happening with your store today.</p>
+        </div>
+        <div className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-white/5 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 shadow-inner">
+          <Calendar size={14} />
+          {new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+        </div>
       </section>
 
       {/* Stats Grid */}
