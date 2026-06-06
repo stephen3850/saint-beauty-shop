@@ -3,6 +3,7 @@ import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
 import { useState } from 'react';
+import Logo from './Logo';
 
 const Navbar = () => {
   const { user, isAdmin, logout } = useAuth();
@@ -13,8 +14,8 @@ const Navbar = () => {
     <nav className="glass sticky top-0 z-50 px-6 py-4 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-serif font-bold text-accent">
-          Saint <span className="text-primary">Beauty Shop</span>
+        <Link to="/">
+          <Logo />
         </Link>
 
         {/* Desktop Nav */}

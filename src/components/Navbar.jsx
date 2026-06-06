@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 import { ShoppingBag, User, Menu, X, Search, ChevronDown } from 'lucide-react';
+import Logo from './common/Logo';
 
 const Navbar = () => {
   const { isAuthenticated, role } = useAuth();
@@ -124,15 +125,8 @@ const Navbar = () => {
 
           {/* Center: Logo */}
           <div className="flex justify-center flex-shrink-0">
-            <Link to="/" className="flex flex-col items-center group scale-75 md:scale-100 origin-center transition-transform">
-              <div className="relative">
-                <span className="text-3xl md:text-4xl font-normal tracking-[0.2em] text-gray-800 uppercase leading-none">SAINT</span>
-                <div className="flex justify-center items-center gap-2 mt-1">
-                   <div className="h-px bg-gray-300 w-6 md:w-8" />
-                   <span className="text-[#FA8CA3] text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em]">BEAUTY SHOP</span>
-                   <div className="h-px bg-gray-300 w-6 md:w-8" />
-                </div>
-              </div>
+            <Link to="/">
+              <Logo />
             </Link>
           </div>
 
