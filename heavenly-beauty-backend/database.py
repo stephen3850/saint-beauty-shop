@@ -6,8 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# SQLite is file-based and requires no separate server installation
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./saint_beauty.db")
+# On Vercel, we must use /tmp for SQLite to have write access
+if os.environ.get('VERCEL'):
+    SQLALCHEMY_DATABASE_URL = "sqlite:////tmp/saint_beauty.db"
+else:
+    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./saint_beauty.db")
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}

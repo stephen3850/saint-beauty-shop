@@ -2,9 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // 1. BACKEND URL CONFIGURATION
-// In development: http://localhost:5000 (via Vite proxy)
-// In production: Uses the VITE_API_URL environment variable from Vercel/Netlify
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE_URL = '';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
