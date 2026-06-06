@@ -1,0 +1,197 @@
+:root {
+  /* Your Exact Midnight Navy Theme */
+  --admin-bg: #0F172A;          /* Deepest Navy Background */
+  --admin-card-bg: #1E293B;     /* Slightly Lighter Navy for Cards */
+  --admin-sidebar-bg: #0B0F1D;  /* Solid Dark Sidebar */
+  --accent-blue: #3B82F6;       /* Vibrant Electric Blue */
+  --accent-gold: #D4AF37;       /* Luxury Gold */
+  --text-primary: #F8FAFC;      /* Crisp White Text for Visibility */
+  --text-secondary: #94A3B8;    /* Soft Slate for secondary info */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 80px;
+  --header-height: 70px;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+.admin-dashboard-wrapper {
+  background-color: var(--admin-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* Main Content Area */
+.admin-main-content {
+  flex: 1;
+  padding: 1.25rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Desktop Sidebar Margins */
+@media (min-width: 1024px) {
+  .admin-main-content {
+    margin-left: var(--sidebar-width);
+  }
+  .admin-main-content.collapsed {
+    margin-left: var(--sidebar-collapsed);
+  }
+}
+
+/* Premium Card Design */
+.glass-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* Vivid Card Variations */
+.vivid-card-blue { border-top: 3px solid #3B82F6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%); }
+.vivid-card-green { border-top: 3px solid #10B981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%); }
+.vivid-card-purple { border-top: 3px solid #8B5CF6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%); }
+.vivid-card-orange { border-top: 3px solid #F59E0B; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%); }
+.vivid-card-rose { border-top: 3px solid #F43F5E; background: linear-gradient(135deg, rgba(244, 63, 94, 0.1) 0%, rgba(30, 41, 59, 0.7) 100%); }
+
+.vivid-glow-blue::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); pointer-events: none; }
+.vivid-glow-green::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%); pointer-events: none; }
+.vivid-glow-purple::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%); pointer-events: none; }
+
+/* Sidebar Styling */
+.admin-sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: linear-gradient(180deg, var(--admin-sidebar-bg) 0%, #050810 100%);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+}
+
+.sidebar-nav {
+  padding: 1rem;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.4rem;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  color: var(--text-primary);
+  font-weight: 700;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Table Design for Dark Mode */
+.admin-table-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table-container th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table-row td {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.01);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.admin-table-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Header Bar */
+.admin-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Search Input Visibility */
+.admin-search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  color: white;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.admin-search-input:focus {
+  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.08);
+}
