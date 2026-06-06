@@ -1,6 +1,9 @@
-heavenly-beauty-backend/
-python-backend/
+node_modules/
+dist/
 venv/
 .venv/
+__pycache__/
 *.db
-*.py
+.env
+.idea/
+.vscode/
