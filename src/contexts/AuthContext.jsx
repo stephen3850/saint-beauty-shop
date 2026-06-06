@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       // Get fresh profile data
-      const { data } = await api.get('/api/auth/me');
+      const { data } = await api.get('/auth/me');
       if (data) {
         const fullUser = {
           ...data,
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
       params.append('username', email);
       params.append('password', password);
 
-      const { data } = await api.post('/api/auth/login', params, {
+      const { data } = await api.post('/auth/login', params, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
 
@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
         password,
         ...extraData
       };
-      const { data } = await api.post('/api/auth/register', payload);
+      const { data } = await api.post('/auth/register', payload);
 
       const userData = {
         ...data.user,
@@ -112,7 +112,7 @@ export const AuthProvider = ({ children }) => {
 
   const updateUserProfile = async (updatedData) => {
     try {
-      const { data } = await api.put('/api/auth/profile', updatedData);
+      const { data } = await api.put('/auth/profile', updatedData);
       const newUser = { ...user, ...data };
       setUser(newUser);
       localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(newUser));

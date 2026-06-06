@@ -2,15 +2,15 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // 1. BACKEND URL CONFIGURATION
-// In development, this usually points to http://localhost:5000
-const API_BASE_URL = 'http://localhost:5000';
+// We use a relative path so Vite proxy handles the connection to localhost:5000
+const API_BASE_URL = '/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 5000, // 5 second timeout
+  timeout: 10000, // Increase to 10 seconds
 });
 
 // 2. REQUEST INTERCEPTOR (Adds Token)

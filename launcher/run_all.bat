@@ -8,7 +8,7 @@ echo.
 
 :: 1. Launch Backend
 echo [1/2] Starting FastAPI Backend on port 5000...
-start "Saint Backend (FastAPI)" cmd /k "cd ..\heavenly-beauty-backend && (if exist venv\Scripts\python.exe (venv\Scripts\python.exe -m uvicorn main:socket_app --host 0.0.0.0 --port 5000 --reload) else (python -m uvicorn main:socket_app --host 0.0.0.0 --port 5000 --reload))"
+start "Saint Backend (FastAPI)" cmd /k "cd ..\heavenly-beauty-backend && (if exist venv\Scripts\python.exe (echo Using Virtual Environment... && venv\Scripts\python.exe -m uvicorn main:socket_app --host 0.0.0.0 --port 5000 --reload) else (echo Virtual environment not found. Trying global python... && python -m uvicorn main:socket_app --host 0.0.0.0 --port 5000 --reload)) || (echo CRITICAL ERROR: Backend failed to start. Please check if Python and FastAPI are installed. && pause)"
 
 :: 2. Wait a few seconds for backend to initialize
 timeout /t 5 /nobreak > nul

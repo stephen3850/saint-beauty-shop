@@ -8,10 +8,13 @@ router = APIRouter(prefix="/api/auth", tags=["Authentication"])
 
 @router.post("/register", response_model=schemas.Token)
 def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    print(f"📥 Register request for: {user.email}")
     db_user = db.query(models.User).filter(models.User.email == user.email).first()
     if db_user:
+        print(f"❌ Email already exists: {user.email}")
         raise HTTPException(status_code=400, detail="Email already registered")
 
+    print(f"🔐 Hashing password...")
     hashed_password = auth.get_password_hash(user.password)
 
     # Compose full name for legacy compatibility
@@ -45,13 +48,24 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/login", response_model=schemas.Token)
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    print(f"📥 Login attempt for: {form_data.username}")
     user = db.query(models.User).filter(models.User.email == form_data.username).first()
-    if not user or not auth.verify_password(form_data.password, user.password):
+    if not user:
+        print(f"❌ User not found: {form_data.username}")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password",
         )
 
+    print(f"🔐 Verifying password for: {user.email}")
+    if not auth.verify_password(form_data.password, user.password):
+        print(f"❌ Password mismatch for: {user.email}")
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect email or password",
+        )
+
+    print(f"✅ Login successful: {user.email}")
     access_token = auth.create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer", "user": user}
 
