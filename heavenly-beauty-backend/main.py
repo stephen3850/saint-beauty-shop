@@ -18,12 +18,12 @@ db = SessionLocal()
 seed_db(db)
 db.close()
 
-app = FastAPI(title="Heavenly Beauty Shop API", version="1.0.0")
+app = FastAPI(title="Saint Beauty Shop API", version="1.0.0")
 
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"], # Allow all origins for easier debugging
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

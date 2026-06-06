@@ -42,3 +42,10 @@ A premium e-commerce platform for beauty products. Fully updated and ready.
 ## Deployment
 
 The project is configured for deployment on Vercel and Netlify.
+
+## Troubleshooting
+
+If you cannot log in or create an account:
+1. **Check Backend Terminal**: Ensure the window titled "Saint Backend (FastAPI)" is open and doesn't show errors.
+2. **Install Dependencies**: Run `pip install -r requirements.txt` inside the `heavenly-beauty-backend` folder.
+3. **Check Browser Console**: Press `F12` in your browser and look for red error messages. If it says "Connection Refused", the backend is not running.

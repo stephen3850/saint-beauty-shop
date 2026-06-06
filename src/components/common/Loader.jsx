@@ -1,12 +1,12 @@
 import React from 'react';
 
 export const FullPageLoader = () => (
-  <div className="fixed inset-0 z-[250] flex items-center justify-center bg-[#FEF5F0]">
+  <div className="fixed inset-0 z-[250] flex items-center justify-center bg-[#F2F6F0]">
     <div className="flex flex-col items-center gap-8 animate-in fade-in duration-1000">
-      <h1 className="text-3xl font-bold tracking-tight text-[#2D2327] animate-pulse">
-        HEVEN<span className="font-light italic">BEAUTY SHOP</span>
+      <h1 className="text-3xl font-bold tracking-tight text-[#2D3A2E] animate-pulse">
+        SAINT<span className="font-light italic">BEAUTY SHOP</span>
       </h1>
-      <div className="w-12 h-[1px] bg-[#E5705E] animate-[shimmer_2s_infinite]" />
+      <div className="w-12 h-[1px] bg-primary animate-[shimmer_2s_infinite]" />
     </div>
   </div>
 );

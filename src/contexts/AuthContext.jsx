@@ -58,13 +58,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      // FastAPI login uses OAuth2PasswordRequestForm which expects username and password
-      const formData = new FormData();
-      formData.append('username', email);
-      formData.append('password', password);
+      // Use URLSearchParams for application/x-www-form-urlencoded (standard for FastAPI OAuth2)
+      const params = new URLSearchParams();
+      params.append('username', email);
+      params.append('password', password);
 
-      const { data } = await api.post('/api/auth/login', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+      const { data } = await api.post('/api/auth/login', params, {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
 
       const userData = {

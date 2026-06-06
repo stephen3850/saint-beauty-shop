@@ -41,6 +41,7 @@ api.interceptors.response.use(
 
     if (!error.response) {
       // Network Error (Backend down or CORS)
+      toast.error('Cannot connect to the server. Please ensure the backend is running!', { id: 'backend-unreachable' });
       console.error('CRITICAL: Backend is unreachable. Is it running on port 5000?');
     } else {
       const { status } = error.response;
