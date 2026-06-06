@@ -78,7 +78,10 @@ const RegisterPage = () => {
 
       if (user) {
         toast.success(`Welcome to Saint Beauty Shop, ${formData.firstName}! ✨`);
-        navigate('/dashboard'); // Auto-login and go to dashboard
+        // Force state persistence check before navigating
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 100);
       }
     } catch (err) {
       const errorMsg = err.response?.data?.detail || 'Registration failed. Please try again.';

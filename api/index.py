@@ -7,16 +7,23 @@ sys.path.insert(0, path)
 
 from main import app
 
-# Vercel needs 'app' to be exported at the top level
-# We ensure the database is initialized on cold start
 import models
 from database import engine, SessionLocal
 from seed_data import seed_db
 
-models.Base.metadata.create_all(bind=engine)
-db = SessionLocal()
-seed_db(db)
-db.close()
+# Initialize database in /tmp for Vercel write access
+try:
+    print("🚀 Initializing Saint Beauty Database...")
+    models.Base.metadata.create_all(bind=engine)
+    db = SessionLocal()
+    # Check if we need to seed
+    if db.query(models.User).count() == 0:
+        print("🌱 Seeding initial data...")
+        seed_db(db)
+    db.close()
+    print("✅ Database ready!")
+except Exception as e:
+    print(f"❌ Database initialization error: {e}")
 
 # Export for Vercel
 app = app

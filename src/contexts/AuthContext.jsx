@@ -92,7 +92,12 @@ export const AuthProvider = ({ children }) => {
         password,
         ...extraData
       };
+      console.log('📤 Sending registration payload:', { ...payload, password: '***' });
       const { data } = await api.post('/api/auth/register', payload);
+
+      if (!data || !data.access_token) {
+        throw new Error('Registration succeeded but no session was created. Please log in.');
+      }
 
       const userData = {
         ...data.user,
@@ -103,9 +108,10 @@ export const AuthProvider = ({ children }) => {
       setUser(userData);
       localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(userData));
       socketService.connect();
-      toast.success(`Welcome to Saint Beauty shop, ${name}!`);
+      toast.success(`Welcome to Saint Beauty Shop, ${name}!`);
       return userData;
     } catch (error) {
+      console.error('❌ Registration error:', error);
       throw error;
     }
   };

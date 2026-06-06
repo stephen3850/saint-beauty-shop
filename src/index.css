@@ -26,6 +26,11 @@
     input, select, textarea {
       font-size: 16px !important; /* Prevents auto-zoom on iOS Chrome */
     }
+    .btn-premium, .btn-rose-gold, .btn-outline-premium {
+      @apply px-6 py-4 text-xs;
+    }
+    h1 { @apply text-4xl leading-tight; }
+    h2 { @apply text-2xl; }
   }
 }
 

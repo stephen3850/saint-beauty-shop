@@ -26,6 +26,7 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
         name=full_name,
         email=user.email,
         password=hashed_password,
+        address=user.address,
         address_1=user.address_1,
         address_2=user.address_2,
         city=user.city,
