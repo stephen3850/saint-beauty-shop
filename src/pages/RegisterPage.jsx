@@ -78,14 +78,14 @@ const RegisterPage = () => {
 
       if (user) {
         toast.success(`Welcome to Saint Beauty Shop, ${formData.firstName}! ✨`);
-        // Force state persistence check before navigating
-        setTimeout(() => {
-          navigate('/dashboard');
-        }, 100);
+        setTimeout(() => navigate('/dashboard'), 500);
       }
     } catch (err) {
-      const errorMsg = err.response?.data?.detail || 'Registration failed. Please try again.';
-      toast.error(errorMsg);
+      // Show the actual error from the backend
+      const detail = err.response?.data?.detail;
+      const message = typeof detail === 'string' ? detail : 'Registration failed. Check your internet or try a different email.';
+      toast.error(message, { duration: 5000 });
+      console.error('Signup Error:', err);
     } finally {
       setIsSubmitting(false);
     }
