@@ -7,6 +7,7 @@ class UserBase(BaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     email: EmailStr
+    address: Optional[str] = None
     address_1: Optional[str] = None
     address_2: Optional[str] = None
     city: Optional[str] = None
