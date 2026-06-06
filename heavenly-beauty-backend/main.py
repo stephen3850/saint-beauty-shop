@@ -42,6 +42,11 @@ app.include_router(admin.router)
 app.include_router(chat.router)
 app.include_router(payments.router)
 
+@app.get("/")
+@app.get("/api")
+def root():
+    return {"message": "Saint Beauty API is running on Vercel"}
+
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "database": "connected", "stack": "FastAPI + SQLite"}
