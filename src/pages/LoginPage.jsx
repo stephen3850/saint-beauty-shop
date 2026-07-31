@@ -27,7 +27,11 @@ const LoginPage = () => {
       const from = location.state?.from?.pathname || '/dashboard';
       navigate(from, { replace: true });
     } catch (err) {
-      // Error handled by toast in context
+      // Show detailed error message
+      const detail = err.response?.data?.detail;
+      const message = typeof detail === 'string' ? detail : 'Login failed. Please check your credentials and ensure the server is responding.';
+      toast.error(message, { duration: 5000 });
+      console.error('Login Error:', err);
     } finally {
       setIsSubmitting(false);
     }
