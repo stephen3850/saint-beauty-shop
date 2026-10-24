@@ -29,7 +29,7 @@ def seed_db(db: Session):
     # Seed Products
     if db.query(models.Product).count() == 0:
         products = [
-            {"name": "Heavenly Glow Serum", "price": 49.99, "category": "Skincare", "description": "Vitamin C serum for radiant skin"},
+            {"name": "Saint Glow Serum", "price": 49.99, "category": "Skincare", "description": "Vitamin C serum for radiant skin"},
             {"name": "Angelic Hair Oil", "price": 34.99, "category": "Hair", "description": "Nourishing argan and coconut oil"},
             {"name": "Divine Lip Kit", "price": 29.99, "category": "Makeup", "description": "3-piece liquid lipstick set"},
             {"name": "Rose Quartz Face Mask", "price": 24.99, "category": "Skincare", "description": "Hydrating sheet mask set"},

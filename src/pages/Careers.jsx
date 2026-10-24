@@ -105,7 +105,7 @@ const Careers = () => {
            <div className="space-y-10">
               <h2 className="text-4xl font-bold text-gray-900 tracking-tight leading-tight">We're building more than a brand. We're building a movement.</h2>
               <p className="text-gray-500 text-lg leading-relaxed font-medium">
-                At Heavenly Beauty Shop, we believe your career should be as radiant as your skin. We offer a hybrid workspace, comprehensive health coverage, and a culture that celebrates clinical expertise alongside creative freedom.
+                At Saint Beauty Shop, we believe your career should be as radiant as your skin. We offer a hybrid workspace, comprehensive health coverage, and a culture that celebrates clinical expertise alongside creative freedom.
               </p>
               <div className="grid grid-cols-2 gap-8">
                  <div className="space-y-2">
@@ -135,7 +135,7 @@ const Careers = () => {
             </p>
             <div className="pt-4">
               <a
-                href="mailto:careers@heavenlybeauty.com"
+                href="mailto:careers@saintbeauty.com"
                 className="inline-block bg-emerald-600 text-white px-10 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-emerald-900 transition-all shadow-xl"
               >
                 Send CV to Our Curators

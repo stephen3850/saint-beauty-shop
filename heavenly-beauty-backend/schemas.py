@@ -59,7 +59,7 @@ class ProductBase(BaseModel):
     price: float
     category: str = "Skincare"
     stock: int = 0
-    shop_name: str = "Heavenly Beauty"
+    shop_name: str = "Saint Beauty"
     is_featured: bool = False
 
 class ProductCreate(ProductBase):

@@ -38,13 +38,13 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="mailto:hello@heavenlybeauty.com" className="flex items-center gap-5 group">
+              <a href="mailto:hello@saintbeauty.com" className="flex items-center gap-5 group">
                 <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email Ritual</p>
-                  <p className="text-base font-bold text-gray-800">hello@heavenlybeauty.com</p>
+                  <p className="text-base font-bold text-gray-800">hello@saintbeauty.com</p>
                 </div>
               </a>
 

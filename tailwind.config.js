@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        heavenly: {
+        saint: {
           pearl: '#F2F6F0', // Soft mint cream
           rose: '#7B9E87', // Sage green (New primary)
           mauve: '#6A8A75', // Darker sage

@@ -12,7 +12,7 @@ from database import get_db
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("SECRET_KEY", "heavenly_beauty_secret_key_2025")
+SECRET_KEY = os.getenv("SECRET_KEY", "saint_beauty_secret_key_2025")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 10080)) # 7 days
 

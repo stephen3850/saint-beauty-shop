@@ -22,7 +22,7 @@ auto_replies = {
     "tracking": "You can track your order from Dashboard → My Orders → Track Order. 📍",
     "payment": "We accept Credit Card, Mobile Money (M-Pesa), and Cash on Delivery. 💳",
     "cancel": "You can cancel order within 1 hour of placing from My Orders page. ❌",
-    "hello": "Hello! Welcome to Heavenly Beauty Shop. How can I help you today? 💕",
+    "hello": "Hello! Welcome to Saint Beauty Shop. How can I help you today? 💕",
     "hi": "Hi there! How can I assist you with your beauty needs? ✨",
     "help": "I can help with: orders, shipping, returns, payments, or products. 🕊️"
 }
@@ -68,7 +68,7 @@ async def send_message(sid, data):
             bot_data = {
                 "conversationId": conv_id,
                 "senderId": 0,
-                "senderName": "Heavenly Bot",
+                "senderName": "Saint Bot",
                 "senderRole": "bot",
                 "content": reply,
                 "createdAt": datetime.datetime.utcnow().isoformat()

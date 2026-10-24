@@ -49,7 +49,7 @@ const About = () => {
               Our founder, Stephen, noticed a gap in the market: products were either "natural" but ineffective, or "effective" but filled with harsh chemicals. Armed with a passion for botany and a background in skin science, he began formulating the very first batch of what is now our best-selling Radiance Serum.
             </p>
             <p className="text-gray-600 leading-relaxed text-base">
-              Today, Heavenly Beauty Shop supports over 50 local farmers across East Africa, sourcing the purest Hibiscus, Moringa, and Baobab oils to ensure every drop of our ritual is as fresh as the morning dew.
+              Today, Saint Beauty Shop supports over 50 local farmers across East Africa, sourcing the purest Hibiscus, Moringa, and Baobab oils to ensure every drop of our ritual is as fresh as the morning dew.
             </p>
             <div className="flex gap-8 pt-4">
                <div>

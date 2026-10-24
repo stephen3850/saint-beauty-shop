@@ -52,7 +52,7 @@ class Product(Base):
     category = Column(String, default="Skincare")
     stock = Column(Integer, default=0)
     images = Column(Text, default="[]") # JSON string list of URLs
-    shop_name = Column(String, default="Heavenly Beauty")
+    shop_name = Column(String, default="Saint Beauty")
     rating = Column(Float, default=0.0)
     num_reviews = Column(Integer, default=0)
     is_featured = Column(Boolean, default=False)

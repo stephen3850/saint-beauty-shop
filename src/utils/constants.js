@@ -25,6 +25,6 @@ export const STORAGE_KEYS = {
   USER: 'hb_user',
   CART: 'hb_cart',
   WISHLIST: 'hb_wishlist',
-  CHAT_HISTORY: 'heavenly_chat_history',
+  CHAT_HISTORY: 'saint_chat_history',
   RECENTLY_VIEWED: 'hb_recently_viewed'
 };
